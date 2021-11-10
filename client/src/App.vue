@@ -3,6 +3,10 @@
     <Header 
       title="Football Stadiums"
     />
+
+    <!-- router-view to render the matched view componenet for the given path -->
+    <router-view></router-view>
+
     <Footer />
   </div>
 </template>
@@ -37,7 +41,7 @@ export default defineComponent({
     max-width: 1366px;
     margin: 30px;
     overflow: auto;
-    min-height: 500px;
+    min-height: 300px;
     border: 1px solid black;
     padding: 30px;
     border-radius: 5px;
