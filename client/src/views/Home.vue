@@ -33,7 +33,7 @@
                 }
             },
             async addStadium(coordinates) {
-                console.log(" adding a new stadium: ", coordinates)
+                // console.log(" adding a new stadium: ", coordinates)
                 try {
                     const res = await axios.post('http://localhost:5000/stadiums', 
                         {
@@ -49,7 +49,7 @@
                         }
                     )
 
-                    console.log("new entry added: ", res.data)
+                    // console.log("new entry added: ", res.data)
                     // add new entry to stadiums array
                     this.stadiums = [...this.stadiums, res.data]
                     // this.stadiums.push(res.data)
