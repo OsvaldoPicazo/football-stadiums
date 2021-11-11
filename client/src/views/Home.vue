@@ -4,9 +4,17 @@
         :key="stadiums" 
         @add-stadium="addStadium" 
     />
+
+    <StadiumCard 
+        v-if="openStadiumCard"
+        :stadium='stadium'
+        @close-stadium-card="closeStadium"
+    />
+
     <Stadiums 
         :stadiums="stadiums" 
         @delete-stadium="deleteStadium"
+        @open-stadium="openStadium"
     />
 </template>
 
@@ -15,20 +23,31 @@
     import axios from "axios";
     import Map from '../components/Map.vue'
     import Stadiums from '../components/Stadiums.vue'
+    import StadiumCard from '../components/StadiumCard.vue'
 
     export default {
         name: 'Home',
         components: {
             Map,
-            Stadiums
+            Stadiums,
+            StadiumCard
         },
         data() {
             return {
                 // array to render
-                stadiums: []
+                stadiums: [],
+                openStadiumCard: false,
+                stadium: {}
             }
         },
         methods: {
+            openStadium(stadium) {
+                this.openStadiumCard = true
+                this.stadium = stadium
+            },
+            closeStadium() {
+                this.openStadiumCard = false
+            },
             // fetch data from api
             async fetchStadiums() {
                 try {

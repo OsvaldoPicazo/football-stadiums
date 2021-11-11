@@ -5,6 +5,7 @@
             class="stadium"
             v-for="stadium in stadiums"
             v-bind:key="stadium.id"
+            @click="onOpen(stadium)"
         >
             {{ stadium.name }}
             <i 
@@ -29,6 +30,9 @@ export default defineComponent({
         onDelete(id) {
             // emit custom event upstream 
             this.$emit('delete-stadium', id)
+        },
+        onOpen(stadium) {
+            this.$emit('open-stadium', stadium)
         }
     }
 })
