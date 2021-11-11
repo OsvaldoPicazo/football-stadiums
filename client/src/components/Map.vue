@@ -10,7 +10,7 @@
     export default defineComponent({
         name: 'Map',
         props: {
-            stadiums: Object
+            stadiums: Array
         },
         // render map once the component is mounted
         mounted() {
@@ -27,7 +27,7 @@
 
             // add markers and popups ince the map is loaded
             map.on('load', () => {
-                // console.log(JSON.parse(JSON.stringify(this.stadiums)));
+                console.log(JSON.parse(JSON.stringify(this.stadiums)));
 
                 // add data source
                 map.addSource('stadiums', {
@@ -47,6 +47,13 @@
                         'circle-color': '#F73668'
                     }
                 });
+
+                // add new entry when clicking on the map
+                map.on('click', (e) => {
+                    console.log(`A click event has occurred at: `, e.lngLat);
+                    const coordinates = e.lngLat
+                    this.$emit('add-stadium', coordinates)
+                });                
 
                 map.on("click", "points", (e) => {
                     console.log("event", e)
