@@ -30,7 +30,7 @@ $ npm run dev:all
 - Clicking on the map adds a new marker/entry to backend
 - Double click on the stadium box to show its name and image
 - Edit and delete buttons in each stadium element
--
+
 ## Backlog
 
 - Functional Popup that displays information about the marker
