@@ -12,7 +12,7 @@
 
         // render map once the component is mounted
         mounted() {
-            mapboxgl.accessToken = process.env.VUE_APP_MAPBOX_TOKEN
+            mapboxgl.accessToken = process.env.VUE_APP_MAPBOX_TOKEN || "pk.eyJ1Ijoib3N2YWxkb3BpY2F6byIsImEiOiJja3Z0dGoyNjFiZzRnMzBzN25rcXN3eDUzIn0.XIsWzk7ztZ382tFhzkFf7Q"
             const map = new mapboxgl.Map({
                 container: "map",
                 style: "mapbox://styles/mapbox/streets-v11",
@@ -20,6 +20,7 @@
                 zoom: 1,
             });
 
+            // add navigation controls
             map.addControl(new mapboxgl.NavigationControl());
 
             // add map layers once the map is loaded
@@ -32,6 +33,7 @@
 </script>
 
 <style scoped>
+    /* width, height and padding attributes are required to display the map */
     #map {
         width:100%;
         height: 0;
