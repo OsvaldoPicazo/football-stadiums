@@ -129,6 +129,11 @@
                     updatedStadium);
 
                     // console.log("updated succesfully: ", result.data)
+
+                    // update array for rendering
+                    this.stadiums = this.stadiums.map(stadium => 
+                        stadium.id === editedStadium.id ? {...stadium, name: result.data.name, imageURL: result.data.imageURL} : stadium
+                    )
                 }
                 catch(error) {
                     console.log("error while editing the entry: ", error)

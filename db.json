@@ -25,28 +25,28 @@
       "imageURL": "https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_660,h_371,c_fill/cms/public/images/allianz-arena/arena-aussenbilder/parken_zufahrt_spieltag.jpg"
     },
     {
-        "id": "0cded0b5-1f4c-46a8-9ffd-a5946ea6c4b8",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -99.1505169748491,
-            19.303083452391867
-          ]
-        },
-        "name": "Estadio Azteca",
-        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Estadio_Azteca1706p2.jpg/1200px-Estadio_Azteca1706p2.jpg"
+      "id": "0cded0b5-1f4c-46a8-9ffd-a5946ea6c4b8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1505169748491,
+          19.303083452391867
+        ]
       },
-      {
-        "id": "f9fb32d2-b8cd-4d3d-9a0e-db501fde799a",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -58.3647563032216,
-            -34.63537253742667
-          ]
-        },
-        "name": "La Bombonera",
-        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/6/69/La_Bombonera._-_panoramio.jpg"
-      }
+      "name": "Estadio Azteca",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Estadio_Azteca1706p2.jpg/1200px-Estadio_Azteca1706p2.jpg"
+    },
+    {
+      "id": "f9fb32d2-b8cd-4d3d-9a0e-db501fde799a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.3647563032216,
+          -34.63537253742667
+        ]
+      },
+      "name": "La Bombonera",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/6/69/La_Bombonera._-_panoramio.jpg"
+    }
   ]
 }
