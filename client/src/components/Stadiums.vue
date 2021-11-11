@@ -5,7 +5,7 @@
             class="stadium"
             v-for="stadium in stadiums"
             v-bind:key="stadium.id"
-            @click="onOpen(stadium)"
+            @dblclick="onOpen(stadium)"
         >
             {{ stadium.name }}
             <i 
