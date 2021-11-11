@@ -28,7 +28,7 @@
 
             // add markers and popups ince the map is loaded
             map.on('load', () => {
-                console.log("geojson: ", JSON.parse(JSON.stringify(this.stadiums)));
+                // console.log("geojson: ", JSON.parse(JSON.stringify(this.stadiums)));
 
                 // add data source
                 map.addSource('stadiums', {
@@ -48,7 +48,6 @@
                         'circle-color': '#F73668'
                     }
                 });
-
 
                 map.on("click", "points", (e) => {
                     console.log("marker clicked", e)

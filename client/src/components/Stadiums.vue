@@ -7,6 +7,12 @@
             v-bind:key="stadium.id"
         >
             {{ stadium.name }}
+            <i 
+                id="delete-stadium" 
+                class="fas fa-times"
+                @click="onDelete(stadium.id)"
+            ></i>
+            <i id="edit-stadium" class="fas fa-edit"></i>
         </div>
     </div>
 </template>
@@ -18,6 +24,12 @@ export default defineComponent({
     name: 'Stadiums',
     props: {
         stadiums: Array
+    },
+    methods: {
+        onDelete(id) {
+            // emit custom event upstream 
+            this.$emit('delete-stadium', id)
+        }
     }
 })
 </script>
@@ -39,7 +51,24 @@ export default defineComponent({
         text-align: center;
         position: relative;
         font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
     }
+
+    #delete-stadium {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        cursor: pointer;        
+    }
+
+    #edit-stadium {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;        
+    }    
 
     /* media queries to change the number of columns */
     @media (max-width: 1000px) {
@@ -48,7 +77,7 @@ export default defineComponent({
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 700px) {
         .stadiums {
             grid-template-columns: repeat(2, 1fr);
         }

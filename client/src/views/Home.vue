@@ -1,6 +1,13 @@
 <template>
-    <Map :stadiums="stadiums" :key="stadiums" @add-stadium="addStadium" />
-    <Stadiums :stadiums="stadiums" />
+    <Map 
+        :stadiums="stadiums" 
+        :key="stadiums" 
+        @add-stadium="addStadium" 
+    />
+    <Stadiums 
+        :stadiums="stadiums" 
+        @delete-stadium="deleteStadium"
+    />
 </template>
 
 <script>
@@ -57,7 +64,18 @@
                 catch(error) {
                     console.log("error while adding a new stadium entry: ", error)
                 }
+            },
+            async deleteStadium(id) {
+                try {
+                    await axios.delete(`http://localhost:5000/stadiums/${id}`)
+
+                    this.stadiums = this.stadiums.filter( stadium => stadium.id !== id)
+                }
+                catch(error) {
+                    console.log("error while deleting entry: ", error)
+                }
             }
+            
         },
         // fetch data everytime the component is created/page reloaded
         created() {
