@@ -11,10 +11,18 @@
         @close-stadium-card="closeStadium"
     />
 
+    <EditStadium 
+        v-if="openEditCard"
+        :stadium='stadium'
+        @close-edit-card="closeEditStadium"
+        @edit-stadium="editStadium"
+    />
+
     <Stadiums 
         :stadiums="stadiums" 
         @delete-stadium="deleteStadium"
         @open-stadium="openStadium"
+        @open-edit-stadium="openEditStadium"
     />
 </template>
 
@@ -24,19 +32,22 @@
     import Map from '../components/Map.vue'
     import Stadiums from '../components/Stadiums.vue'
     import StadiumCard from '../components/StadiumCard.vue'
+    import EditStadium from '../components/EditStadium.vue'
 
     export default {
         name: 'Home',
         components: {
             Map,
             Stadiums,
-            StadiumCard
+            StadiumCard,
+            EditStadium
         },
         data() {
             return {
                 // array to render
                 stadiums: [],
                 openStadiumCard: false,
+                openEditCard: false,
                 stadium: {}
             }
         },
@@ -47,6 +58,13 @@
             },
             closeStadium() {
                 this.openStadiumCard = false
+            },
+            openEditStadium(stadium) {
+                this.openEditCard = true
+                this.stadium = stadium
+            },
+            closeEditStadium() {
+                this.openEditCard = false
             },
             // fetch data from api
             async fetchStadiums() {
@@ -92,6 +110,28 @@
                 }
                 catch(error) {
                     console.log("error while deleting entry: ", error)
+                }
+            },
+            async editStadium(editedStadium) {
+                // close edit card
+                this.openEditCard = false
+                try {
+                    // fetch entry to update
+                    const res = await axios.get(`http://localhost:5000/stadiums/${editedStadium.id}`)
+    
+                    // console.log('fetched stadium: ', res.data)
+                    const stadiumToUpdate = res.data
+
+                    const updatedStadium = {...stadiumToUpdate, name: editedStadium.name, imageURL: editedStadium.imageURL}
+
+                    // update entry
+                    const result = await axios.put(`http://localhost:5000/stadiums/${updatedStadium.id}`,
+                    updatedStadium);
+
+                    // console.log("updated succesfully: ", result.data)
+                }
+                catch(error) {
+                    console.log("error while editing the entry: ", error)
                 }
             }
             

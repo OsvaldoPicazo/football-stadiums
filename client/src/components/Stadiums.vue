@@ -13,7 +13,11 @@
                 class="fas fa-times"
                 @click="onDelete(stadium.id)"
             ></i>
-            <i id="edit-stadium" class="fas fa-edit"></i>
+            <i 
+                id="edit-stadium" 
+                class="fas fa-edit"
+                @click="onEdit(stadium)"
+            ></i>
         </div>
     </div>
 </template>
@@ -30,6 +34,9 @@ export default defineComponent({
         onDelete(id) {
             // emit custom event upstream 
             this.$emit('delete-stadium', id)
+        },
+        onEdit(stadium) {
+            this.$emit('open-edit-stadium', stadium)
         },
         onOpen(stadium) {
             this.$emit('open-stadium', stadium)
