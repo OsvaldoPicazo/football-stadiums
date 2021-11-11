@@ -1,22 +1,28 @@
 {
-    "stadiums": [
-        {
-            "id": "38aecafc-a7c4-430a-b99e-bab1fde2f3d0",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-3.6885053893773034, 40.45375679614548]
-              },
-            "name": "Santiago Bernabeu",
-            "imageURL": "https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/madrid/estadio-bernabeu-vista-aerea-c-turismo-madrid.jpg_1014274486.jpg"
-        },
-        {
-            "id": "e105c521-257e-417d-969e-0fc7e40c7e7d",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [11.624489892063258, 48.21987580134581]
-              },
-            "name": "Allianz Arena",
-            "imageURL": "https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_660,h_371,c_fill/cms/public/images/allianz-arena/arena-aussenbilder/parken_zufahrt_spieltag.jpg"
-        }
-    ]
+  "stadiums": [
+    {
+      "id": "38aecafc-a7c4-430a-b99e-bab1fde2f3d0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6885053893773034,
+          40.45375679614548
+        ]
+      },
+      "name": "Santiago Bernabeu",
+      "imageURL": "https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/madrid/estadio-bernabeu-vista-aerea-c-turismo-madrid.jpg_1014274486.jpg"
+    },
+    {
+      "id": "e105c521-257e-417d-969e-0fc7e40c7e7d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.624489892063258,
+          48.21987580134581
+        ]
+      },
+      "name": "Allianz Arena",
+      "imageURL": "https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_660,h_371,c_fill/cms/public/images/allianz-arena/arena-aussenbilder/parken_zufahrt_spieltag.jpg"
+    }
+  ]
 }
