@@ -11,7 +11,8 @@
   "scripts": {
     "dev:all": "concurrently \"npm run serve -w client\" \"json-server --watch db.json --port 5000\"",
     "dev:front": "npm run serve -w client",
-    "dev:back": "json-server --watch db.json --port 5000"
+    "dev:back": "json-server --watch db.json --port 5000",
+    "postinstall": "cd client && npm install"
   },
   "devDependencies": {
     "concurrently": "^6.3.0"

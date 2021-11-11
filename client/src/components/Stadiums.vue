@@ -22,10 +22,9 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script>
 
-export default defineComponent({
+export default {
     name: 'Stadiums',
     props: {
         stadiums: Array
@@ -42,7 +41,7 @@ export default defineComponent({
             this.$emit('open-stadium', stadium)
         }
     }
-})
+}
 </script>
 
 <style scoped>
