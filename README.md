@@ -11,7 +11,6 @@ Map to locate football stadiums around the world.
 ```shell
 $ cd football-stadiums
 $ npm install
-$ npm run postinstall
 $ npm run dev:all
 ```
 - The frontend App should open in port 3000. You can also check it here:
