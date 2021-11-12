@@ -13,6 +13,21 @@ $ cd football-stadiums
 $ npm install
 $ npm run dev:all
 ```
+
+Alternatively, you can also run the frontend and backend individually.
+
+- For frontend:
+```shell
+$ cd client
+$ npm run serve
+```
+
+- For Backend:
+```shell
+$ cd football-stadiums
+$ json-server --watch db.json --port 5000
+```
+
 - The frontend App should open in port 3000. You can also check it here:
 
     http://localhost:3000
